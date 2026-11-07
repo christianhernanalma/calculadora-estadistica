@@ -24,3 +24,25 @@ def calcular_mediana(datos):
 if __name__ == "__main__":
     numeros = [10, 20, 30, 40, 50, 60]
     print(f"La mediana es: {calcular_mediana(numeros)}")
+
+#funcion para calcular la moda
+def calcular_moda(datos):
+    
+    modas = []
+    conteo_mas_alta = 0
+    
+    if not datos:
+        return 0
+    for n in datos:
+        
+        if datos.count(n) > conteo_mas_alta:
+            conteo_mas_alta = datos.count(n)
+            modas = [n]
+        elif datos.count(n) == conteo_mas_alta and n not in modas:
+            modas.append(n)
+    return modas 
+
+#prueba de la tercera funcion
+if __name__ == "__main__":
+    numeros = [10, 20, 30, 40, 50, 10, 20]
+    print(f"La moda es: {calcular_moda(numeros)}")
